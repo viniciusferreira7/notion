@@ -92,7 +92,7 @@ export function Editor() {
       )}
       {editor && (
         <FloatingMenu
-          className="bg-zinc-50 py-2 px-1 shadow-xl border border-zinc-200 shadow-black/20 rounded-lg overflow-hidden flex flex-col"
+          className="bg-zinc-50 py-2 px-1 shadow-xl border border-zinc-200 shadow-black/20 rounded-lg overflow-hidden flex flex-col gap-1"
           editor={editor}
           tippyOptions={{ duration: 100 }}
           shouldShow={({ state }) => {
@@ -104,7 +104,7 @@ export function Editor() {
           }}
         >
           <button
-            className="flex items-center gap-2 rounded min-w-[280px]"
+            className="flex items-center gap-2 rounded min-w-[280px] hover:bg-zinc-100"
             onClick={() =>
               editor.chain().focus().toggleHeading({ level: 1 }).run()
             }
@@ -113,16 +113,17 @@ export function Editor() {
             <Image
               alt=""
               src="https://www.notion.so/images/blocks/header.57a7576a.png"
-              width={50}
-              height={50}
+              className="w-12 object-cover"
+              width={100}
+              height={100}
             />
-            <div>
-              <span>Heading 1</span>
-              <span>Big section heading</span>
+            <div className="flex flex-col text-left">
+              <span className="text-md">Heading 1</span>
+              <span className="text-sm text-zinc-500">Big section heading</span>
             </div>
           </button>
           <button
-            className="flex items-center gap-2 rounded min-w-[280px]"
+            className="flex items-center gap-2 rounded min-w-[280px] hover:bg-zinc-100"
             onClick={() =>
               editor.chain().focus().toggleHeading({ level: 2 }).run()
             }
@@ -131,28 +132,34 @@ export function Editor() {
             <Image
               alt=""
               src="https://www.notion.so/images/blocks/subheader.9aab4769.png"
-              width={50}
-              height={50}
+              className="w-12 object-cover"
+              width={100}
+              height={100}
             />
-            <div>
-              <span>Heading 2</span>
-              <span>Medium section heading</span>
+            <div className="flex flex-col text-left">
+              <span className="text-md">Heading 2</span>
+              <span className="text-sm text-zinc-500">
+                Medium section heading
+              </span>
             </div>
           </button>
           <button
-            className="flex items-center gap-2 rounded min-w-[280px]"
+            className="flex items-center gap-2 rounded min-w-[280px] hover:bg-zinc-100"
             onClick={() => editor.chain().focus().toggleBulletList().run()}
             data-active={editor.isActive('bulletList', { level: 1 })}
           >
             <Image
               alt=""
               src="https://www.notion.so/images/blocks/bulleted-list.0e87e917.png"
-              width={50}
-              height={50}
+              className="w-12 object-cover"
+              width={100}
+              height={100}
             />
-            <div>
-              <span>Bulleted list</span>
-              <span>Create a simple bulleted list.</span>
+            <div className="flex flex-col text-left">
+              <span className="text-md">Bulleted list</span>
+              <span className="text-sm text-zinc-500">
+                Create a simple bulleted list.
+              </span>
             </div>
           </button>
         </FloatingMenu>
